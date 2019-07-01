@@ -64,6 +64,7 @@
   padding-top: 13px;
   padding-bottom: 14px;
   padding-left: 70px;
+  padding-right: 10px;
   box-sizing: border-box;
   margin-bottom: 21px;
   transition-property: background-color;
@@ -100,8 +101,8 @@
           border-bottom: 2px solid $black;
           position: absolute;
           left: 4px;
-          top: 5px;
-          transform: rotate(-45deg);
+          top: calc(50% - 2px);
+          transform: translateY(-50%) rotate(-45deg) ;
           z-index: 1;
         }
 

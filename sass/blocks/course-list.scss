@@ -170,3 +170,32 @@
 .course-list__documents {
   margin: 20px 0 10px;
 }
+
+div.course-list__dg-order-form {
+  display: none;
+}
+
+@media (max-width: 980px) {
+
+  .course-list__item {
+    flex-direction: column;
+  }
+
+  .course-list__left {
+    flex-basis: auto;
+    padding: 20px;
+  }
+
+  .course-list__right {
+    padding: 20px;
+  }
+
+}
+
+@media (max-width: 680px) {
+
+  .course-list__title {
+    font-size: px-to-rem(30px);
+  }
+
+}
