@@ -142,6 +142,17 @@
 
 }
 
+.documents__text {
+  font-size: px-to-rem(18px);
+  line-height: 1.333;
+  margin: 20px 0 !important;
+
+  span {
+    color: #a5a5a5;
+  }
+
+}
+
 @media (max-width: 980px) {
 
   .documents__form {
