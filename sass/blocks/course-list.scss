@@ -2,6 +2,7 @@
   flex-basis: 100%;
   min-width: 100%;
   flex-grow: 1;
+  color: $black;
 }
 
 .course-list__top {
@@ -14,7 +15,6 @@
 
 .course-list__title {
   font-size: px-to-rem(40px);
-  color: $black;
   line-height: 1.2;
   font-weight: bold;
   margin: 0 !important;
@@ -22,7 +22,6 @@
 
 .course-list__bid {
   font-size: px-to-rem(18px);
-  color: $black;
   line-height: 1.333;
 }
 
@@ -43,12 +42,12 @@
   padding-bottom: 34px;
   box-sizing: border-box;
   flex-basis: 389px;
+  flex-shrink: 0;
   border-right: 1px solid rgb(234, 239, 241);
 }
 
 .course-list__pay-title {
   font-size: px-to-rem(26px);
-  color: $black;
   font-weight: 900;
   line-height: 0.923;
   margin-bottom: 25px !important;
@@ -56,7 +55,6 @@
 
 .course-list__full-price, .course-list__discount {
   font-size: px-to-rem(18px);
-  color: $black;
   line-height: 1.333;
   display: flex;
   justify-content: space-between;
@@ -66,7 +64,6 @@
 
 .course-list__pay {
   font-size: px-to-rem(18px);
-  color: $black;
   font-weight: 700;
   line-height: 1.333;
   display: flex;
@@ -100,4 +97,76 @@
 
 .course-list__btn--credit {
   background-image: url("../img/credit.png");
+}
+
+.course-list__checkbox {
+  @include checkbox();
+}
+
+.course-list__right {
+  padding: 35px 39px 39px 39px;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.course-list__type {
+  font-size: px-to-rem(18px);
+  color: rgb(165, 165, 165);
+  line-height: 1.333;
+  margin: 0 0 10px !important;
+}
+
+.course-list__name {
+  font-size: px-to-rem(22px);
+  line-height: 1.091;
+  font-weight: 700;
+  margin: 10px 0 0 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(234, 239, 241);
+}
+
+.course-list__information-left {
+  margin-right: 15px;
+}
+
+.course-list__information {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.course-list__lastname,
+.course-list__address,
+.course-list__first-date,
+.course-list__last-date {
+  font-size: px-to-rem(16px);
+  line-height: 1.5;
+  color: #a5a5a5;
+  margin: 10px 0 !important;
+
+  span {
+    color: $black;
+  }
+
+}
+
+.course-list__edit {
+  display: inline-block;
+  margin-left: 5px;
+
+  img {
+    display: block;
+  }
+
+}
+
+.course-list__warning {
+  padding-top: 13px;
+  padding-bottom: 14px;
+  margin: 10px 0;
+}
+
+.course-list__documents {
+  margin: 20px 0 10px;
 }
