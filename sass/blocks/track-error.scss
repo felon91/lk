@@ -1,0 +1,14 @@
+.track-error {
+  background-color: $red;
+  border-radius: 3px;
+  padding: 8px 10px 8px 20px;
+  margin: 10px 0;
+
+  p {
+    font-size: px-to-rem(16px);
+    line-height: 1.5;
+    color: $redText;
+    margin: 10px 0;
+  }
+
+}

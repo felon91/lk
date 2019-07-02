@@ -264,6 +264,53 @@ div.course-list__dg-order-form {
   z-index: -999;
 }
 
+.course-list__input-track {
+  border: 1px solid $black;
+  border-radius: 3px;
+  width: 148px;
+  font-size: px-to-rem(16px);
+  line-height: 1.5;
+  color: $black;
+  padding-left: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  box-sizing: border-box;
+  margin-right: 10px;
+
+  &::placeholder {
+    color: rgba(165, 165, 165, 0.6);
+  }
+
+}
+
+.error.course-list__input-track {
+  border-color: $redText;
+}
+
+.course-list__save-track {
+  appearance: none;
+  background: none;
+  font-size: px-to-rem(16px);
+  line-height: 1.5;
+  color: $black;
+  border: 1px solid $black;
+  border-radius: 3px;
+  width: 113px;
+  box-sizing: border-box;
+  box-shadow: none;
+  cursor: pointer;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  transition-duration: 500ms;
+  transition-property: background-color, color;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+
+}
+
 @media (max-width: 980px) {
 
   .course-list__item {
@@ -302,6 +349,11 @@ div.course-list__dg-order-form {
   .course-list__info-hide {
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .course-list__input-track, .course-list__save-track {
+    margin-bottom: 5px;
+    margin-top: 5px;
   }
 
 }

@@ -20,16 +20,9 @@
         <p class="course-list__pay-title">Оплата курса</p>
         <p class="course-list__full-price">Полная стоимость <span>13 800 ₽</span></p>
         <p class="course-list__discount">Скидка <span>-7 590 ₽</span></p>
-        <p class="course-list__pay">К оплате <span>6 210 ₽</span></p>
-        <a class="course-list__btn course-list__btn--receipt" href="#">Оплатить квитанцией
-          <span>в любом отделении банка</span></a>
-        <a class="course-list__btn course-list__btn--online" href="#">Оплатить онлайн
-          <span>Visa, Mastercard, Qiwi и др.</span></a>
-        <a class="course-list__btn course-list__btn--credit" href="#">Оплатить в рассрочку <span>I платеж (10%) – 620 руб.</span></a>
-        <div class="course-list__checkbox">
-          <input id="organization" type="checkbox" name="organization" value="yes">
-          <label for="organization">Обучение за счёт организации</label>
-        </div>
+        <p class="course-list__paid">Оплачено <span>6 210 ₽</span></p>
+        <a href="#" class="course-list__document">Справка об обучении</a>
+        <a href="#" class="course-list__document">Заявление и договор</a>
       </div>
       <div class="course-list__right">
         <p class="course-list__type">Курс профессиональной переподготовки</p>
@@ -83,59 +76,46 @@
             <p class="course-list__last-date">Итоговая аттестация <span>11.09.2019 г. - 16.09.2019 г.</span></p>
           </div>
         </div>
-        <div class="course-list__warning warning">
-          <div class="warning__left">
-            <p>Для доступа к обучению</p>
-          </div>
-          <div class="warning__right">
-            <p>1. Оплатите обучение на курсе</p>
-            <p>2. Отправьте документы в приёмную комиссию</p>
-          </div>
+        <div class="course-list__track">Номер почтового отправления
+          <span class="course-list__question">
+            <img src="img/question.png" alt="Вопрос">
+            <div class="course-list__info-hide">
+              <p>*Номер отслеживания почтового отправления</p>
+            </div>
+          </span>
+          <input class="course-list__input-track error" type="text" name="track-number" placeholder="Укажите номер">
+          <button class="course-list__save-track">Сохранить</button>
+          <!--
+          <span class="course-list__track-number">RA123456789RU</span>
+          <a class="course-list__edit course-list__edit--track" href="#">
+            <img src="img/edit.png" alt="Редактировать">
+          </a>
+          -->
         </div>
-        <div class="course-list__documents documents">
-          <p class="documents__title">Документы</p>
-          <ol class="documents__list">
-            <li class="documents__item documents__item--change">Скачайте, распечатайте и подпишите документы <a href="#">Скачать документы</a>
-            </li>
-            <li class="documents__item">Загрузите скан-копии подписанных документов в архиве и отправьте на проверку</li>
-          </ol>
-          <form action="#" class="documents__form">
-            <div class="documents__select">
-              <label>Заявление и Договор</label>
-              <div class="documents__dogovor">
-                <span>Загрузить</span>
+        <div class="track-error">
+          <p>Отправьте оригиналы подписанных документов (два заявления и два экземпляра договора) курьером или по почте на адрес: 105066, Москва, ООО "Московский институт профессиональной переподготовки и повышения квалификации педагогов", пер. Токмаков 5, стр. 1, пом. 1, ком. 10.</p>
+        </div>
+        <div class="course-list__training training">
+          <p class="training__title">Обучение</p>
+          <div class="training__block">
+            <div class="training__left">
+              <p class="training__sub-title">Пройдено модулей</p>
+              <div class="training__progress">
+                <div class="training__bar"
+                     data-valuedone="1"
+                     data-valuemin="0"
+                     data-valuemax="100"
+                     data-valuecount="7"
+                ></div>
               </div>
+              <span class="training__count">
+                <span class="training__first">1</span> из <span class="training__last">5</span>
+              </span>
             </div>
-            <div class="documents__select documents__select--item">
-              <label>Паспорт</label>
-              <div class="documents__passport">
-                <span>Загрузить</span>
-              </div>
+            <div class="training__right">
+              <a class="training__study" href="#"><span>Перейти к обучению</span></a>
             </div>
-            <div class="documents__select documents__select--item">
-              <label>Диплом и приложение</label>
-              <div class="documents__diplom">
-                <span>Загрузить</span>
-              </div>
-            </div>
-            <div class="documents__select documents__select--item">
-              <label>
-                Документ об изменении фамилии
-                <span class="documents__question">
-                  <img src="img/question.png" alt="Вопрос">
-                  <div class="documents__info-hide">
-                    <p>*Необходимо, если фамилия в дипломе отличается от фамилии в паспорте.</p>
-                  </div>
-                </span>
-              </label>
-              <div class="documents__lastname">
-                <span>Загрузить</span>
-              </div>
-            </div>
-            <div class="documents__btn">
-              <button>Отправить докуметы на проверку</button>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -167,6 +147,22 @@
     function changeText(element, text) {
       $(element).html(text);
     }
+
+    function initProgressBar(options) {
+      options.valueDone = $(options.progressBar).attr('data-valuedone');
+      options.valueCount = $(options.progressBar).attr('data-valuecount');
+      options.valueMax = $(options.progressBar).attr('data-valuemax');
+      options.valueMin = $(options.progressBar).attr('data-valuemin');
+      $(options.firstItem).text(options.valueDone);
+      $(options.lastItem).text(options.valueCount);
+      $(options.progressBar).css('width', (options.valueMax * options.valueDone) / options.valueCount + '%');
+    }
+
+    initProgressBar({
+      progressBar: '.training__bar',
+      firstItem: '.training__first',
+      lastItem: '.training__last',
+    })
 
   });
 </script>
