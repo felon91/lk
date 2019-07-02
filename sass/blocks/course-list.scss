@@ -79,6 +79,35 @@
 
 }
 
+.course-list__paid, .course-list__first-payment {
+  padding-left: 31px;
+  color: $green;
+  background: url("../img/success.png") left center no-repeat;
+  font-weight: 700;
+  font-size: px-to-rem(18px);
+  line-height: 1.333;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 30px !important;
+
+  span {
+    font-size: px-to-rem(24px);
+    line-height: 1;
+  }
+
+}
+
+.course-list__first-payment {
+  font-weight: 400;
+  align-items: center;
+  margin: 10px 0 !important;
+
+  span {
+    font-size: px-to-rem(18px);
+  }
+
+}
+
 .course-list__btn {
   @include button();
 }
@@ -138,6 +167,7 @@
 
 .course-list__lastname,
 .course-list__address,
+.course-list__track,
 .course-list__first-date,
 .course-list__last-date {
   font-size: px-to-rem(16px);
@@ -149,6 +179,10 @@
     color: $black;
   }
 
+}
+
+.course-list__track {
+  margin-top: 0 !important;
 }
 
 .course-list__edit {
@@ -175,6 +209,61 @@ div.course-list__dg-order-form {
   display: none;
 }
 
+.course-list__document {
+  padding-left: 35px;
+  display: inline-block;
+  background: url("../img/document.png") left center no-repeat;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: px-to-rem(18px);
+  line-height: 1.333;
+  color: $blue;
+  margin-right: 15px;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+  
+}
+
+.course-list__question {
+  display: inline-block;
+  position: relative;
+  cursor: help;
+  margin-left: 5px;
+  margin-right: 5px;
+
+  img {
+    display: block;
+  }
+
+  &:hover {
+
+    .course-list__info-hide {
+      opacity: 1;
+      z-index: 1;
+    }
+
+  }
+
+}
+
+.course-list__info-hide {
+  position: absolute;
+  width: 250px;
+  left: -200px;
+  top: 20px;
+  background-color: $white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  padding: 15px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition-duration: 500ms;
+  transition-property: opacity;
+  z-index: -999;
+}
+
 @media (max-width: 980px) {
 
   .course-list__item {
@@ -196,6 +285,23 @@ div.course-list__dg-order-form {
 
   .course-list__title {
     font-size: px-to-rem(30px);
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .course-list__track {
+    position: relative;
+  }
+
+  .course-list__question {
+    position: static;
+  }
+
+  .course-list__info-hide {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
 }

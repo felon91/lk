@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Личный кабинет</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.min.css" type="text/css"/>
+  <link rel="stylesheet" href="css/all.min.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+  <div class="course-list">
+    <div class="course-list__top">
+      <h2 class="course-list__title">Заявки на обучение</h2>
+      <p class="course-list__bid">Заявка №1202920</p>
+    </div>
+    <div class="course-list__item">
+      <div class="course-list__left">
+        <p class="course-list__pay-title">Оплата курса</p>
+        <p class="course-list__full-price">Полная стоимость <span>13 800 ₽</span></p>
+        <p class="course-list__discount">Скидка <span>-7 590 ₽</span></p>
+        <p class="course-list__paid">Оплачено <span>6 210 ₽</span></p>
+        <a href="#" class="course-list__document">Справка об обучении</a>
+        <a href="#" class="course-list__document">Заявление и договор</a>
+      </div>
+      <div class="course-list__right">
+        <p class="course-list__type">Курс профессиональной переподготовки</p>
+        <p class="course-list__name">Информатика: теория и методика преподавания в образовательной
+          организации 300 ч</p>
+        <div class="course-list__information">
+          <div class="course-list__information-left">
+            <p class="course-list__lastname">ФИО <span>Иванов Иван Иванович</span></p>
+            <p class="course-list__address">Адрес <span>142100, Подольск, Ленинская, д.8, кв.25</span>
+              <a class="course-list__edit" href="#">
+                <img src="img/edit.png" alt="Редактировать">
+              </a>
+            </p>
+            <div class="course-list__dg-order-form dg-order-form">
+              <div class="dg-order-form__item">
+                <label>Область</label>
+                <input name="region" value="" type="text">
+              </div>
+              <div class="dg-order-form__item">
+                <label>Индекс</label>
+                <input name="postindex" value="" type="text">
+              </div>
+              <div class="dg-order-form__item">
+                <label>Нас. пункт</label>
+                <input name="city" value="" type="text">
+              </div>
+              <div class="dg-order-form__item">
+                <label>Улица</label>
+                <input name="street" value="" type="text">
+              </div>
+              <div class="dg-order-form__item">
+                <label>Дом</label>
+                <input name="house" value="" type="text">
+              </div>
+              <div class="dg-order-form__item">
+                <label>Корпус</label>
+                <input name="korpus" value="" type="text">
+              </div>
+              <div class="dg-order-form__item">
+                <label>Квартира</label>
+                <input name="flat" value="" type="text">
+              </div>
+              <div class="dg-order-form__item">
+                <a class="dg-btn__orange dg-margin-fix" href="javascript:void(0);"
+                   onclick="d_address_save(event, 'd-address-870380829', vAddressItemSpan);">Сохранить</a>
+              </div>
+            </div>
+          </div>
+          <div class="course-list__information-right">
+            <p class="course-list__first-date">Начало обучения <span>16.05.2019 г.</span></p>
+            <p class="course-list__last-date">Итоговая аттестация <span>11.09.2019 г. - 16.09.2019 г.</span></p>
+          </div>
+        </div>
+        <div class="course-list__track">Номер почтового отправления
+          <span class="course-list__question">
+                <img src="img/question.png" alt="Вопрос">
+                <div class="course-list__info-hide">
+                  <p>*Номер отслеживания почтового отправления</p>
+                </div>
+              </span>
+          <span>RA123456789RU</span>
+          <a class="course-list__edit" href="#">
+            <img src="img/edit.png" alt="Редактировать">
+          </a>
+        </div>
+        <div class="course-list__training training">
+          <p class="training__title">Обучение</p>
+          <div class="training__block">
+            <div class="training__left">
+              <p class="training__sub-title">Пройдено модулей</p>
+              <div class="training__progress">
+                <div class="training__bar"
+                     data-valuedone="1"
+                     data-valuemin="0"
+                     data-valuemax="100"
+                     data-valuecount="7"
+                ></div>
+              </div>
+              <span class="training__count">
+                <span class="training__first">1</span> из <span class="training__last">5</span>
+              </span>
+            </div>
+            <div class="training__right">
+              <a class="training__study" href="#"><span>Перейти к обучению</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/all.min.js"></script>
+<script>
+  $(document).ready(function () {
+
+    const labels = {
+      basic: `Скачайте, распечатайте и подпишите документы <a href="#">Скачать документы</a>`,
+      organization: `Скачайте заявление, договор и счет на оплату для Вашей организации <a href="#">Скачать документы</a>`
+    };
+
+    $('.course-list__checkbox input').on('click', function (event) {
+      isActiveInput(event, '.documents__select--item');
+    });
+
+    function isActiveInput(event, elements) {
+      if (event.target.checked) {
+        $(elements).addClass('hide');
+        changeText('.documents__item--change', labels.organization);
+      } else {
+        $(elements).removeClass('hide');
+        changeText('.documents__item--change', labels.basic);
+      }
+    }
+
+    function changeText(element, text) {
+      $(element).html(text);
+    }
+
+    function initProgressBar(options) {
+      options.valueDone = $(options.progressBar).attr('data-valuedone');
+      options.valueCount = $(options.progressBar).attr('data-valuecount');
+      options.valueMax = $(options.progressBar).attr('data-valuemax');
+      options.valueMin = $(options.progressBar).attr('data-valuemin');
+      $(options.firstItem).text(options.valueDone);
+      $(options.lastItem).text(options.valueCount);
+      $(options.progressBar).css('width', (options.valueMax * options.valueDone) / options.valueCount + '%');
+    }
+
+    initProgressBar({
+      progressBar: '.training__bar',
+      firstItem: '.training__first',
+      lastItem: '.training__last',
+    })
+
+  });
+</script>
+</body>
+</html>

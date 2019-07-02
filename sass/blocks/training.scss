@@ -1,0 +1,101 @@
+.training {
+
+}
+
+.training__title {
+  font-size: px-to-rem(24px);
+  font-weight: 700;
+  line-height: 1;
+  margin: 20px 0 !important;
+}
+
+.training__sub-title {
+  font-size: px-to-rem(18px);
+  line-height: 1.333;
+  flex-basis: 100%;
+  margin: 0 0 10px !important;
+}
+
+.training__progress {
+  border: 2px solid $green;
+  border-radius: 3px;
+  height: 23px;
+  box-sizing: border-box;
+  display: flex;
+  flex-basis: 445px;
+}
+
+.training__bar {
+  background-color: $green;
+  height: 100%;
+}
+
+.training__block {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.training__left {
+  flex-shrink: 0;
+  flex-basis: 530px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.training__right {
+  flex-basis: 219px;
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+.training__count {
+  font-size: px-to-rem(18px);
+  line-height: 1.333;
+  margin-left: 10px;
+}
+
+.training__study {
+  background-color: $green;
+  display: block;
+  color: $white;
+  font-size: px-to-rem(18px);
+  line-height: 1.333;
+  padding-left: 15px;
+  border-radius: 3px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  transition-property: background-color;
+  transition-duration: 500ms;
+
+  span {
+    background: url("../img/arrow-right.png") right center no-repeat;
+    padding-right: 25px;
+    display: inline-block;
+  }
+
+  &:hover {
+    background-color: darken($green, 10%);
+  }
+
+}
+
+@media (max-width: 680px) {
+
+  .training__progress {
+    flex-basis: 100%;
+  }
+
+  .training__left {
+    flex-basis: 100%;
+    flex-grow: 1;
+  }
+
+  .training__count {
+    margin-left: 0;
+  }
+
+}
